@@ -70,7 +70,6 @@ nav a.active {
   transform: scale(1.1);
 }
 
-/* NAV highlight effect */
 nav a::after {
   content: "";
   position: absolute;
@@ -87,10 +86,10 @@ nav a.active::after {
   width: 100%;
 }
 
-/* მთავარი კონტენტი */
+/* მთავარი */
 section {
   padding: 30px 40px;
-  flex: 1; /* ასე footer ყოველთვის ბოლოში იქნება */
+  flex: 1;
 }
 
 h1, h2, h3 {
@@ -119,11 +118,11 @@ p {
     position: relative;
     width: 100%;
     max-width: 800px;
-    aspect-ratio: 16/9; /* პროპორციების შენარჩუნება */
+    aspect-ratio: 16/9; 
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
-    background-color: #f0f0f0; /* ფონური ფერი */
+    background-color: #f0f0f0; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,8 +139,8 @@ p {
     width: 100%;
     height: 100%;
     display: none;
-    object-fit: contain;        /* სურათი მთლიანად ეტევა */
-    background-color: #f0f0f0; /* დამატებითი სივრცე შევსება */
+    object-fit: contain;        
+    background-color: #f0f0f0; 
   }
 
   .slide.active {
@@ -194,15 +193,15 @@ p {
 
 .room-card img {
   width: 100%;
-  height: 150px; /* სიმაღლე */
-  object-fit: cover; /* სურათის ჩასმა ჩარჩოში */
+  height: 150px; 
+  object-fit: cover; 
   border-radius: 8px;
-  cursor: pointer; /* გამოხატავს clickable */
+  cursor: pointer; 
   transition: transform 0.3s ease;
 }
 
 .room-card img:hover {
-  transform: scale(1.05); /* hover ეფექტი */
+  transform: scale(1.05);
 }
 
 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVAN Hotel — ოთახები</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="img/1.png" alt="Logo">
+        <h1>LEVAN Hotel</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">მთავარი</a></li>
+            <li><a href="rooms.html" class="active">ოთახები</a></li>
+            <li><a href="booking.html">დაჯავშნა</a></li>
+            <li><a href="contact.html">კონტაქტი</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="rooms">
+    <h2>ოთახების ჩამონათვალი</h2>
+    <div class="room-list">
+        <div class="room-card">
+            <img src="img/3.png" class="card-img-top" alt="room pict.." onclick="window.open(this.src, '_blank')">
+            <h3>სტანდარტული ოთახი</h3>
+            <p>ფასი: 120 ₾/ღამე</p>
+            <button onclick="window.location.href='booking.html'">დაჯავშნა</button>
+        </div>
+        <div class="room-card">
+            <img src="img/ho3.jpeg" class="card-img-top" alt="room pict.." onclick="window.open(this.src, '_blank')">
+            <h3>ლუქსი</h3>
+            <p>ფასი: 220 ₾/ღამე</p>
+            <button onclick="window.location.href='booking.html'">დაჯავშნა</button>
+        </div>
+        <div class="room-card">
+            <img src="img/ho4.jpg" class="card-img-top" alt="room pict.." onclick="window.open(this.src, '_blank')">
+            <h3>პენტჰაუსი</h3>
+            <p>ფასი: 400 ₾/ღამე</p>
+            <button disabled>დაკავებულია</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 LEVAN Hotel</p>
+</footer>
+<script>
+    function openModal(src){
+      document.getElementById('modal').style.display = 'block';
+      document.getElementById('modal-img').src = src;
+    }
+
+    function closeModal(){
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    // დახურვა, თუ ვნიქლიკავთ გარეთ
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal');
+      if(event.target == modal){
+        modal.style.display = 'none';
+      }
+    }
+</script>
+</body>
+</html>

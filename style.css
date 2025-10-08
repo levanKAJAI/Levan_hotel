@@ -1,0 +1,298 @@
+/* ძირითადი სტილები */
+:root {
+  --main-bg1: #dfe9f3;
+  --main-bg2: #c5c9e8;
+  --primary: #0077b6;
+  --accent: #90e0ef;
+  --text-dark: #222;
+  --text-light: #fff;
+  --footer-bg: #181818;
+}
+
+/* ფონი */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, var(--main-bg1), var(--main-bg2));
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: var(--text-light);
+  padding: 15px 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* ---------  NAVIGATION --------- */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+nav a {
+  color: #b0bfd8;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+/* NAV highlight effect */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/* მთავარი კონტენტი */
+section {
+  padding: 30px 40px;
+  flex: 1; /* ასე footer ყოველთვის ბოლოში იქნება */
+}
+
+h1, h2, h3 {
+  color: #1a1a1a;
+}
+h1 {
+  color: red;
+}
+p {
+  color: #333;
+  line-height: 1.6;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 300px;
+  padding: 20px;
+}
+
+/* სლაიდი */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16/9; /* პროპორციების შენარჩუნება */
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #f0f0f0; /* ფონური ფერი */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    object-fit: contain;        /* სურათი მთლიანად ეტევა */
+    background-color: #f0f0f0; /* დამატებითი სივრცე შევსება */
+  }
+
+  .slide.active {
+    display: block;
+  }
+
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .prev { left: 10px; }
+  .next { right: 10px; }
+
+  @media (max-width: 500px) {
+    .prev, .next {
+      font-size: 18px;
+      padding: 8px;
+    }
+  }
+
+/* ოთახები */
+.room-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.room-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px; /* card სიგანე */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.room-card img {
+  width: 100%;
+  height: 150px; /* სიმაღლე */
+  object-fit: cover; /* სურათის ჩასმა ჩარჩოში */
+  border-radius: 8px;
+  cursor: pointer; /* გამოხატავს clickable */
+  transition: transform 0.3s ease;
+}
+
+.room-card img:hover {
+  transform: scale(1.05); /* hover ეფექტი */
+}
+
+
+button {
+  padding: 10px 15px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+  background-color: #005f8a;
+  transform: scale(1.05);
+}
+
+/* ფორმის სტილები */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  background: rgba(255,255,255,0.7);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* FOOTER  */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--footer-bg);
+  color: var(--text-light);
+  margin-top: auto;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .room-list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.contact, .booking, .rooms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+  padding: 20px;
+  text-align: center;
+}
+
+.contact h2, .booking h2 {
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.contact p, .booking p {
+  margin: 5px 0;
+  color: #333;
+}
+
+.contact form, .booking form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  width: 100%;
+  background: rgba(255,255,255,0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+

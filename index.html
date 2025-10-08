@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVAN Hotel — მთავარი</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="img/1.png" alt="Logo">
+        <h1>LEVAN Hotel</h1>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">მთავარი</a></li>
+            <li><a href="rooms.html">ოთახები</a></li>
+            <li><a href="booking.html">დაჯავშნა</a></li>
+            <li><a href="contact.html">კონტაქტი</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="main">
+    <section class="slider">
+        <div class="slides">
+            <img src="img/4.jpg" class="slide active" alt="სურათი 1">
+            <img src="img/5.jpg" class="slide active" alt="სურათი 2">
+            <img src="img/6.jpg" class="slide active" alt="სურათი 3">
+            <img src="img/12.jpg" class="slide active" alt="სურათი 4">
+            <img src="img/10.jpg" class="slide active" alt="სურათი 5">
+            <img src="img/9.jpeg" class="slide active" alt="სურათი 6">
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </section>
+    <h2>კეთილი იყოს თქვენი მობრძანება!</h2>
+    <p>
+        LEVAN Hotel გთავაზობთ კომფორტულ და თანამედროვე ოთახებს ბათუმის გულში.
+        ჩვენს სასტუმროში გელოდებათ დაუვიწყარი დასვენება, პროფესიონალური მომსახურება და შესანიშნავი ატმოსფერო.
+    </p>
+    <button onclick="window.location.href='rooms.html'">იხილეთ ოთახები</button>
+</section>
+
+<footer>
+    <p>© 2025 LEVAN Hotel — ყველა უფლება დაცულია.</p>
+</footer>
+
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) slide.classList.add('active');
+    });
+  }
+
+  function changeSlide(n) {
+    slideIndex += n;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    showSlide(slideIndex);
+  }
+
+  function autoSlide() {
+    slideIndex++;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    showSlide(slideIndex);
+  }
+
+  showSlide(slideIndex);
+  setInterval(autoSlide, 3000); // შეცვლა ყოველ 3 წამში
+</script>
+
+</body>
+</html>
